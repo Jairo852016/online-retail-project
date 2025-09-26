@@ -40,7 +40,6 @@ online-retail-project/
 ├─ data/                  # raw and intermediate data (e.g., original .xlsx)
 ├─ db/                    # SQLite database output
 ├─ notebooks/             # Jupyterf or ETL/EDA/plots
-├─ scripts/               # Python scripts 
 ├─ reports/               # saved charts and text summaries
 └─ README.md
 ```

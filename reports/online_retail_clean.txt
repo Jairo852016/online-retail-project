@@ -1,0 +1,60 @@
+=== EDA Summary – Online Retail ===
+Generated at: 2025-09-25 18:51:07
+Source table: transactions (SQLite @ ../db/online_retail_clean.db)
+
+1) What does the dataset contain?
+   Transactional e-commerce records with invoice, product, quantity, pricing, timestamp, customer, and country information.
+
+2) Field descriptions:
+   - InvoiceNo [object] – Identificador de factura (string). En el raw, facturas anuladas suelen iniciar con 'C'. | nulls: 0
+   - StockCode [object] – Código del producto (string). | nulls: 0
+   - Description [object] – Nombre del producto (texto). | nulls: 0
+   - Quantity [int64] – Cantidad vendida en la línea (entero; en el raw, valores negativos indican devoluciones). | nulls: 0
+   - InvoiceDate [datetime64[ns]] – Fecha y hora de la transacción (datetime). | nulls: 0
+   - UnitPrice [float64] – Precio unitario del producto (numérico). | nulls: 0
+   - CustomerID [float64] – Identificador de cliente (categórico; en el raw hay nulos). | nulls: 0
+   - Country [object] – País del cliente (categórico). | nulls: 0
+   - Revenue [float64] – Campo derivado = Quantity × UnitPrice (numérico). | nulls: 0
+
+3) High-level metadata:
+   - Rango temporal: 2010-12-01 → 2011-12-09
+   - Filas × columnas: 397,884 × 9
+   - Facturas únicas: 18,532
+   - Clientes únicos: 4,338
+   - Productos únicos: 3,665
+   - Países: 37
+   - Revenue total (según UnitPrice): 8,911,407.90
+   - Valor promedio por factura (AOV): 480.87 (mediana: 303.04)
+   - Ítems promedio por factura: 278.86 (mediana: 155.00)
+   - Filas duplicadas (exact match): 5,192
+
+4) Top countries by revenue (Top 10):
+   - United Kingdom: 7,308,391.55
+   - Netherlands: 285,446.34
+   - EIRE: 265,545.90
+   - Germany: 228,867.14
+   - France: 209,024.05
+   - Australia: 138,521.31
+   - Spain: 61,577.11
+   - Switzerland: 56,443.95
+   - Belgium: 41,196.34
+   - Sweden: 38,378.33
+
+5) Top products by quantity (Top 10):
+   - PAPER CRAFT , LITTLE BIRDIE: 80,995
+   - MEDIUM CERAMIC TOP STORAGE JAR: 77,916
+   - WORLD WAR 2 GLIDERS ASSTD DESIGNS: 54,415
+   - JUMBO BAG RED RETROSPOT: 46,181
+   - WHITE HANGING HEART T-LIGHT HOLDER: 36,725
+   - ASSORTED COLOUR BIRD ORNAMENT: 35,362
+   - PACK OF 72 RETROSPOT CAKE CASES: 33,693
+   - POPCORN HOLDER: 30,931
+   - RABBIT NIGHT LIGHT: 27,202
+   - MINI PAINT SET VINTAGE: 26,076
+
+6) Suggested additional metadata:
+   - Ventas mensuales por país y global.
+   - Recencia (última compra por cliente), frecuencia (nº facturas) y valor monetario (RFM).
+   - Distribución por día de la semana y hora del día.
+   - Ticket promedio por país y dispersión de precios unitarios.
+   - Porcentaje del revenue concentrado en Top-N productos/países (curva de Pareto).

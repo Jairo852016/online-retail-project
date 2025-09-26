@@ -54,9 +54,9 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt  # if provided
 
 # Example script entry points (to be added)
-# python notebooks/01_clean.py
-# python notebooks/02_eda.py
-# python notebooks/03_visualization.py
+# python notebooks/01_clean.ipynb
+# python notebooks/02_eda.ipynb
+# python notebooks/03_visualization.ipynb
 ```
 
 ## License
